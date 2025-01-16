@@ -1,10 +1,32 @@
 /**********************PROBLEM-1*************/
-// Time Complexity :
-// Space Complexity :
-// Did this code successfully run on Leetcode :
-// Three line explanation of solution in plain english
+// Time Complexity : 0(n)
+// Space Complexity : 0(1)
+// Did this code successfully run on Leetcode : yes
 
-// Your code here along with comments explaining your approach
+// Maintain a pointer k for the position to add elements nad return
+    //iterate the nums array and increment count , if count<=2 keep adding elems at k
+
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        if(nums==null || nums.length==0){
+            return 0;
+        }
+        int k=1,count=1;
+        for(int i=1;i<nums.length;i++){
+            if(nums[i]==nums[i-1]){
+                count++;
+            }else{
+                count=1;
+            }
+            if(count<=2){
+                nums[k]=nums[i];
+                k++;
+            }
+
+        }
+        return k;
+    }
+}
 
 /**********************PROBLEM-2*************/
 // Time Complexity : 0(m+n)
